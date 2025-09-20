@@ -12,17 +12,11 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "pm2": "^5.3.0"
   },
   "scripts": {
     "start": "ts-node index.ts",
     "build": "tsc",
     "start:prod": "node dist/index.js",
-    "pm2:start": "pm2 start ecosystem.config.js",
-    "pm2:stop": "pm2 stop github-issues-bot",
-    "pm2:restart": "pm2 restart github-issues-bot",
-    "pm2:logs": "pm2 logs github-issues-bot",
-    "pm2:monit": "pm2 monit",
     "debug": "node --inspect-brk -r ts-node/register index.ts",
     "debug:9229": "node --inspect=0.0.0.0:9229 -r ts-node/register index.ts",
     "debug:watch": "node --inspect-brk -r ts-node/register --watch index.ts"

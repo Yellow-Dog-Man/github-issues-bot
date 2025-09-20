@@ -35,7 +35,7 @@ client.on("interactionCreate", async (interaction) => {
         if (commandName === "Open github issue") {
             // Extract thread/forum post title if the message is from a thread
             let messageContent = targetMessage.content;
-            
+
             // Fetch the channel using channelId since targetMessage.channel might be null
             const channel = await client.channels.fetch(targetMessage.channelId);
             let threadTitle = "";
@@ -44,13 +44,13 @@ client.on("interactionCreate", async (interaction) => {
                 const thread = channel;
                 threadTitle = thread.name;
             }
-            
+
             // Create message link
             const messageLink = `https://discord.com/channels/${interaction.guildId}/${targetMessage.channelId}/${targetMessage.id}`;
-            
+
             // Add message link to the description
             const descriptionWithLink = `[View original message](${messageLink})\n\n${messageContent}`;
-            
+
             const modal = getModal(threadTitle, descriptionWithLink);
             interaction.showModal(modal);
         }

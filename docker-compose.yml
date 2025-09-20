@@ -9,12 +9,6 @@ services:
       - NODE_ENV=production
     env_file:
       - .env
-    volumes:
-      - ./logs:/app/logs
-    # Uncomment if you need to expose ports
-    # ports:
-    #   - "3000:3000"
-    # Health check
     healthcheck:
       test: ["CMD", "node", "-e", "console.log('Health check passed')"]
       interval: 30s

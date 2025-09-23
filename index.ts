@@ -49,7 +49,7 @@ client.on("interactionCreate", async (interaction) => {
             const messageLink = `https://discord.com/channels/${interaction.guildId}/${targetMessage.channelId}/${targetMessage.id}`;
 
             // Add message link to the description
-            const descriptionWithLink = `[View original message](${messageLink})\n\n${messageContent}`;
+            const descriptionWithLink =  messageContent + `\n\n[View original message](${messageLink})`;
 
             const modal = getModal(threadTitle, descriptionWithLink);
             interaction.showModal(modal);

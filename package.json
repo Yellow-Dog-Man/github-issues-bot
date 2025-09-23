@@ -23,9 +23,5 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "ts-node": {
-    "esm": false,
-    "experimentalSpecifierResolution": "node"
   }
 }
